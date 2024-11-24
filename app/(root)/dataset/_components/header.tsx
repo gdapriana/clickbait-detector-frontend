@@ -1,7 +1,7 @@
 'use client';
 
 import {motion as m} from "framer-motion";
-import {Radar} from "lucide-react";
+import {LinkIcon, Radar} from "lucide-react";
 import {DatasetSchema} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
@@ -68,9 +68,9 @@ export const Header = ({ dataset }: { dataset: DatasetSchema | undefined}) => {
               <p className="text-muted-foreground">Total False Label</p>
             </div>
           </div>
-          <Button asChild className="rounded-full" variant="secondary">
+          <Button asChild className="rounded-full">
             <Link target="_blank" href={dataset?.dataset_link || ""}>
-              Go to Kaggle Page
+              <LinkIcon /> Go to Kaggle Page
             </Link>
           </Button>
         </div>
@@ -86,8 +86,8 @@ export const Header = ({ dataset }: { dataset: DatasetSchema | undefined}) => {
                 tickFormatter={(value) => value.slice(0, 3)}
               />
               <ChartTooltip content={<ChartTooltipContent />} />
-              <Bar dataKey="trueLabel" fill="blue" radius={4} />
-              <Bar dataKey="falseLabel" fill="purple" radius={4} />
+              <Bar dataKey="trueLabel" fill="gray" radius={4} />
+              <Bar dataKey="falseLabel" fill="gray" radius={4} />
             </BarChart>
           </ChartContainer>
         </div>

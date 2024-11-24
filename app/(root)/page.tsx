@@ -1,6 +1,6 @@
 'use client';
 
-import {FlaskConical, Radar, Table} from "lucide-react";
+import {FlaskConical, Radar, Table, Users} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {motion as m} from "framer-motion";
@@ -47,7 +47,7 @@ export default function Home() {
             transition={{ease: 'anticipate', duration: 2, delay: 1}}
           >
             <Button variant="default" asChild className="rounded-full px-12 py-8 font-bold">
-              <Link href="/detect" className="text-lg"><FlaskConical /> Detect Now!</Link>
+              <Link href="/detect" className="text-lg"><FlaskConical/> Detect Now!</Link>
             </Button>
           </m.div>
 
@@ -56,7 +56,16 @@ export default function Home() {
             transition={{ease: 'anticipate', duration: 2, delay: 1.2}}
           >
             <Button variant="outline" asChild className="rounded-full px-12 py-8 font-bold">
-              <Link href="/dataset" className="text-lg"><Table /> Check Dataset</Link>
+              <Link href="/dataset" className="text-lg"><Table/> Check Dataset</Link>
+            </Button>
+          </m.div>
+
+          <m.div
+            animate={{opacity: [0, 1], y: [100, 0]}}
+            transition={{ease: 'anticipate', duration: 2, delay: 1.4}}
+          >
+            <Button variant="outline" asChild className="rounded-full px-12 py-8 font-bold">
+              <Link href="/groupproject" className="text-lg"><Users/> Group Project</Link>
             </Button>
           </m.div>
 

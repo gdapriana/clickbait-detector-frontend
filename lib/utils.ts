@@ -21,3 +21,8 @@ export interface Dataset {
   headline:  string;
 }
 
+export interface Member {
+  name: string;
+  nim: string;
+  profile?: string;
+}
