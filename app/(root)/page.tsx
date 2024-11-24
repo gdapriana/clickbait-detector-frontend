@@ -47,7 +47,7 @@ export default function Home() {
             transition={{ease: 'anticipate', duration: 2, delay: 1}}
           >
             <Button variant="default" asChild className="rounded-full px-12 py-8 font-bold">
-              <Link href="/detect" className="text-lg"><FlaskConical/> Detect Now!</Link>
+              <Link href="/predict" className="text-lg"><FlaskConical/> Detect Now!</Link>
             </Button>
           </m.div>
 
