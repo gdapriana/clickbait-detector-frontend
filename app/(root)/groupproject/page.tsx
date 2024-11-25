@@ -1,6 +1,12 @@
 import {Member} from "@/lib/utils";
 import {Header} from "@/app/(root)/groupproject/_components/header";
 import {MemberContent} from "@/app/(root)/groupproject/_components/member";
+import type {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: "Group Project | CD",
+  description: "Homepage",
+};
 
 const groupMember: Member[] = [
   {name: "I Komang Gede Apriana", nim: "2108561031"},

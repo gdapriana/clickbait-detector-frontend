@@ -11,7 +11,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import {FlaskConical} from "lucide-react";
+import {FlaskConical, SquarePen} from "lucide-react";
 import {Dispatch, SetStateAction} from "react";
 
 const formSchema = z.object({
@@ -43,19 +43,29 @@ export const InputForm = ({ setResult, loading, setLoading }: { setResult: Dispa
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col md:flex-row gap-2 justify-center items-start w-full">
-        <FormField
-          control={form.control}
-          name="text"
-          render={({ field }) => (
-            <FormItem className="w-full">
-              <FormControl>
-                <Input disabled={loading} className="rounded-full h-14 px-8 text-lg" placeholder="News Headline Here..." {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button className="rounded-full h-14 px-8" type="submit"><FlaskConical /> Check</Button>
+        <div className="flex border rounded-full h-16 px-6 flex-1 justify-center items-center">
+          <SquarePen />
+          <FormField
+            control={form.control}
+            name="text"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormControl>
+                  <Input
+                    disabled={loading}
+                    required
+                    minLength={4}
+                    className="rounded-full focus-visible:ring-0 focus-visible:ring-offset-0 border-none"
+                    placeholder="News Headline Here..."
+                    {...field}
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+
+        </div>
+        <Button className="rounded-full h-16 px-8" type="submit"><FlaskConical /> Check</Button>
       </form>
     </Form>
   )

@@ -3,6 +3,14 @@ import {Header} from "@/app/(root)/dataset/_components/header";
 import {DataTable} from "@/app/(root)/dataset/_components/table";
 import {Suspense} from "react";
 import Loading from "@/app/(root)/dataset/loading";
+import type {Metadata} from "next";
+
+
+export const metadata: Metadata = {
+  title: "Dataset | CD",
+  description: "Homepage",
+};
+
 export default async function Page() {
 
   const dataset: DatasetSchema = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/dataset`)
