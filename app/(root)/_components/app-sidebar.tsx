@@ -1,4 +1,4 @@
-import {FlaskConical, Home, Table, Users} from "lucide-react"
+import {FlaskConical, Home, Package, Table, Users} from "lucide-react"
 
 import {
   Sidebar,
@@ -22,6 +22,11 @@ const items = [
     title: "Predict",
     url: "/predict",
     icon: FlaskConical,
+  },
+  {
+    title: "Model",
+    url: "/model",
+    icon: Package,
   },
   {
     title: "Dataset",
