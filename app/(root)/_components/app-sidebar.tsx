@@ -1,4 +1,4 @@
-import {FlaskConical, Home, Package, Table, Users} from "lucide-react"
+import {FlaskConical, Home, LayersIcon, Package, Table, Users} from "lucide-react"
 
 import {
   Sidebar,
@@ -9,7 +9,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import Link from "next/link";
 
 // Menu items.
 const items = [
@@ -37,6 +36,11 @@ const items = [
     title: "Group Project",
     url: "/groupproject",
     icon: Users,
+  },
+  {
+    title: "Tech Stack",
+    url: "/techstack",
+    icon: LayersIcon,
   },
 ]
 
