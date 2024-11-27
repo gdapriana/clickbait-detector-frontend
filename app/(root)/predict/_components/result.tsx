@@ -11,7 +11,7 @@ export const Result = ({ result }: { result: number }) => {
           className={cn("w-0 rounded-full h-2", result < 50 ? "bg-teal-400" : "bg-rose-400")}>
         </m.div>
       </div>
-      <h4 className="text-lg">The news has <span className="font-bold">{result}%</span> posibility Clickbait</h4>
+      <h4 className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold">The news has <span className="font-bold">{result}%</span> posibility Clickbait</h4>
     </main>
   )
 }

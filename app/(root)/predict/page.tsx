@@ -4,6 +4,7 @@ import {useState} from "react";
 import {InputForm} from "@/app/(root)/predict/_components/form";
 import {Result} from "@/app/(root)/predict/_components/result";
 import {motion as m} from "framer-motion";
+import {Skeleton} from "@/components/ui/skeleton";
 
 export default function Page() {
   const [result, setResult] = useState<number | undefined>();
@@ -25,7 +26,7 @@ export default function Page() {
           <InputForm setResult={setResult} loading={loading} setLoading={setLoading} />
         </m.div>
         <div className="w-full mt-8">
-          {loading && <div className="w-full flex justify-center items-center">Loading...</div>}
+          {loading && <Skeleton><div className="w-full h-10 flex justify-center items-center">Loading...</div></Skeleton>}
           {result !== undefined && !loading && <Result result={result} />}
         </div>
       </div>

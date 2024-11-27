@@ -65,7 +65,7 @@ export const InputForm = ({ setResult, loading, setLoading }: { setResult: Dispa
           />
 
         </div>
-        <Button className="rounded-full h-16 px-8" type="submit"><FlaskConical /> Check</Button>
+        <Button disabled={loading} className="rounded-full h-16 px-8" type="submit"><FlaskConical /> Check</Button>
       </form>
     </Form>
   )
