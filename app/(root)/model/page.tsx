@@ -11,7 +11,7 @@ export default async function Page() {
 
   return (
     <div className="w-full h-full flex justify-center items-start">
-      <div className="w-full max-w-4xl pt-20 flex gap-6 flex-col justify-start items-stretch">
+      <div className="w-full max-w-4xl py-20 flex gap-12 flex-col justify-start items-stretch">
         <Header model={model} />
         <ModelStructure model={model}/>
         <ModelEvaluation model={model}/>

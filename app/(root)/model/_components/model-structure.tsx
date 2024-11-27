@@ -1,6 +1,6 @@
 'use client';
 import {cn, Layer, Model} from "@/lib/utils";
-import {ArrowDown, ArrowRight, BatteryCharging, Cog, FileX, Option} from "lucide-react";
+import {ArrowDown, ArrowRight, BatteryCharging, Bolt, Cog, FileX, Layers, Option} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {motion as m} from "framer-motion";
 import {Fragment} from "react";
@@ -11,9 +11,10 @@ export const ModelStructure = ({ model}: { model: Model }) => {
       animate={{opacity: [0, 1], y: [100, 0]}}
       transition={{duration: 2, delay: 2, ease: "anticipate"}}
       className="flex w-full flex-col justify-start items-stretch gap-8">
-      <h3
-        className="scroll-m-20 text-2xl font-semibold tracking-tight">Model Architecture</h3>
-      <div className="grid grid-rows-[auto_auto_auto_auto_auto_auto_auto] grid-cols-1 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr] place-items-center justify-center items-center lg:grid-rows-1">
+      <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight flex justify-start gap-2 items-center">
+        <Layers/> Model Structure</h3>
+      <div
+        className="grid grid-rows-[auto_auto_auto_auto_auto_auto_auto] grid-cols-1 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr] place-items-center justify-center items-center lg:grid-rows-1">
         {model.model_config.layers.map((layer: Layer, index: number) => {
           return (
             <Fragment key={index}>
@@ -21,13 +22,13 @@ export const ModelStructure = ({ model}: { model: Model }) => {
                 className="border overflow-hidden rounded-xl gap-2 flex flex-col justify-start items-stretch">
                 <div className="flex p-4 gap-2 flex-col justify-start items-stretch">
                   <header className="flex font-bold justify-center items-center gap-1">
-                    <Cog />
+                    <Cog/>
                     <h1>{layer.class_name}</h1>
                   </header>
                   {layer.config.activation && (
                     <Button size="sm" variant="secondary">{layer.config.activation}</Button>
                   )}
-                  
+
                 </div>
                 {index === 0 && (
                   <div className="flex justify-center items-center border-t p-2">
@@ -41,8 +42,8 @@ export const ModelStructure = ({ model}: { model: Model }) => {
                 )}
               </div>
               <div className={cn("", (model.model_config.layers.length - 1) === index && "hidden")}>
-                <ArrowRight className="hidden lg:inline" />
-                <ArrowDown className="lg:hidden" />
+                <ArrowRight className="hidden lg:inline"/>
+                <ArrowDown className="lg:hidden"/>
               </div>
             </Fragment>
           )
