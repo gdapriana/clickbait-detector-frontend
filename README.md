@@ -1,4 +1,4 @@
-# Clickbait Detector Frontend 🕵️‍♀️🌐
+# Clickbait Detector Frontend
 
 ![web.png](public/web.png)
 
