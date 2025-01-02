@@ -58,7 +58,7 @@ export default function Home() {
             transition={{ease: 'anticipate', duration: 2, delay: 1.2}}
           >
             <Button variant="outline" asChild className="rounded-full px-10 py-8 font-bold">
-              <Link href="/groupproject" className="text-lg"><Package/> Model</Link>
+              <Link href="/model" className="text-lg"><Package/> Model</Link>
             </Button>
           </m.div>
 
